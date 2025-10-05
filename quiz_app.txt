@@ -1,0 +1,23 @@
+quiz_app/
+├── backend/
+│   └── server.py
+├── frontend/
+│   ├── index.html         # màn hình mở đầu (entry UI chính)
+│   ├── index.js           # logic cho index.html
+│   ├── index.css          # style riêng cho index.html
+│   │
+│   ├── modules/           # chứa các module tái sử dụng
+│   │   ├── bg.js          # module đổi background
+│   │   ├── avatar.js      # module đổi avatar
+│   │   └── utils.js       # hàm tiện ích
+│   │
+│   ├── screens/           # chứa từng màn hình con
+│   │   ├── quiz/          
+│   │   │   ├── quiz.html
+│   │   │   ├── quiz.js
+│   │   │   └── quiz.css
+│   │   └── leaderboard/
+│   │       ├── leaderboard.html
+│   │       ├── leaderboard.js
+│   │       └── leaderboard.css
+└── main.js

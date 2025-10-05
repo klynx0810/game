@@ -1,0 +1,115 @@
+{
+  "displayName": "1",
+  "questions": [
+    {
+      "q": "Nguyên tố nào là thành phần chính của không khí Trái Đất?",
+      "answers": {
+        "A": "Oxy",
+        "B": "Nitơ",
+        "C": "Carbon dioxide",
+        "D": "Hydro"
+      },
+      "correct": "B"
+    },
+    {
+      "q": "Đơn vị đo cường độ dòng điện trong hệ SI là:",
+      "answers": {
+        "A": "Volt (V)",
+        "B": "Watt (W)",
+        "C": "Ampere (A)",
+        "D": "Ohm (Ω)"
+      },
+      "correct": "C"
+    },
+    {
+      "q": "Phân tử nước có công thức hóa học là:",
+      "answers": {
+        "A": "CO₂",
+        "B": "H₂O",
+        "C": "O₂",
+        "D": "H₂SO₄"
+      },
+      "correct": "B"
+    },
+    {
+      "q": "Ai được coi là “cha đẻ” của thuyết tương đối?",
+      "answers": {
+        "A": "Isaac Newton",
+        "B": "Albert Einstein",
+        "C": "Galileo Galilei",
+        "D": "Stephen Hawking"
+      },
+      "correct": "B"
+    },
+    {
+      "q": "Trong bảng tuần hoàn, nguyên tố nào có số hiệu nguyên tử là 1?",
+      "answers": {
+        "A": "Oxy",
+        "B": "Carbon",
+        "C": "Hydro",
+        "D": "Helium"
+      },
+      "correct": "C"
+    },
+    {
+      "q": "Tầng nào của khí quyển chứa tầng ozone?",
+      "answers": {
+        "A": "Đối lưu (Troposphere)",
+        "B": "Bình lưu (Stratosphere)",
+        "C": "Trung lưu (Mesosphere)",
+        "D": "Nhiệt lưu (Thermosphere)"
+      },
+      "correct": "B"
+    },
+    {
+      "q": "Tế bào nào mang thông tin di truyền trong cơ thể?",
+      "answers": {
+        "A": "Mitochondria",
+        "B": "DNA",
+        "C": "Ribosome",
+        "D": "Enzyme"
+      },
+      "correct": "B"
+    },
+    {
+      "q": "Ngôi sao gần Trái Đất nhất (ngoài Mặt Trời) là:",
+      "answers": {
+        "A": "Proxima Centauri",
+        "B": "Sirius",
+        "C": "Betelgeuse",
+        "D": "Vega"
+      },
+      "correct": "A"
+    },
+    {
+      "q": "Năng lượng hạt nhân được giải phóng chủ yếu từ phản ứng nào?",
+      "answers": {
+        "A": "Phản ứng hóa học",
+        "B": "Phản ứng nhiệt điện",
+        "C": "Phản ứng phân hạch / tổng hợp hạt nhân",
+        "D": "Phản ứng điện phân"
+      },
+      "correct": "C"
+    },
+    {
+      "q": "Trong cơ thể người, cơ quan nào lọc máu?",
+      "answers": {
+        "A": "Gan",
+        "B": "Tim",
+        "C": "Thận",
+        "D": "Lá lách"
+      },
+      "correct": "C"
+    },
+    {
+      "q": "Công nghệ in 3D chủ yếu sử dụng nguyên lý gì?",
+      "answers": {
+        "A": "Cắt gọt vật liệu",
+        "B": "Đúc khuôn",
+        "C": "Gia công cộng thêm lớp (additive manufacturing)",
+        "D": "Hàn nhiệt"
+      },
+      "correct": "C"
+    }
+  ]
+}

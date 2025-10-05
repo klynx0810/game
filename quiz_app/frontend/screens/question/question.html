@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Chọn bộ câu hỏi</title>
+  <link rel="stylesheet" href="question.css">
+</head>
+<body>
+  <div id="dataset-page">
+    <h2>Danh sách bộ câu hỏi</h2>
+    <div id="dataset-container"></div>
+    <button id="btnNewDataset">+ Bộ mới</button>
+    <button id="btnBackHome">Về trang chủ</button>
+  </div>
+
+  <!-- Modal tạo bộ mới -->
+  <div id="newDatasetModal" class="modal hidden">
+    <div class="modal-content">
+      <h3>Tạo bộ đề mới</h3>
+      <input type="text" id="newDatasetName" placeholder="Nhập tên bộ đề">
+      <div class="modal-buttons">
+        <button id="btnCreateDataset">Tạo</button>
+        <button id="btnCancelDataset">Hủy</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="question.js"></script>
+</body>
+</html>

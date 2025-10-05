@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz</title>
+  <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+  <div id="quiz-container">
+    <!-- Câu hỏi -->
+    <div id="question-box">
+      <div id="question-bg">
+        <h2 id="question-text">Câu hỏi hiển thị ở đây</h2>
+        <img id="question-image" class="question-img" src="" alt="">
+      </div>
+    </div>
+
+    <!-- Thời gian -->
+    <div id="timer-box">15</div>
+
+    <!-- Đáp án -->
+    <div id="answers">
+      <div class="answer-row" data-choice="A">
+        <div class="answer-bg">
+          <button class="answer-btn">
+            <span class="answer-text">A</span>
+            <img class="answer-img" id="imgA" src="">
+          </button>
+        </div>
+        <div class="avatars" id="avatarsA"></div>
+      </div>
+
+      <div class="answer-row" data-choice="B">
+        <div class="answer-bg">
+          <button class="answer-btn">
+            <span class="answer-text">B</span>
+            <img class="answer-img" id="imgB" src="">
+          </button>
+        </div>
+        <div class="avatars" id="avatarsB"></div>
+      </div>
+
+      <div class="answer-row" data-choice="C">
+        <div class="answer-bg">
+          <button class="answer-btn">
+            <span class="answer-text">C</span>
+            <img class="answer-img" id="imgC" src="">
+          </button>
+        </div>
+        <div class="avatars" id="avatarsC"></div>
+      </div>
+
+      <div class="answer-row" data-choice="D">
+        <div class="answer-bg">
+          <button class="answer-btn">
+            <span class="answer-text">D</span>
+            <img class="answer-img" id="imgD" src="">
+          </button>
+        </div>
+        <div class="avatars" id="avatarsD"></div>
+      </div>
+    </div>
+
+    <button id="btnNext">Câu tiếp theo</button>
+    <div id="quiz-controls">
+      <button id="btnPrev">← Câu trước</button>
+      <button id="btnHome">🏠 Về trang chủ</button>
+    </div>
+  </div>
+
+  <script src="quiz.js"></script>
+</body>
+
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz App - Màn hình mở đầu</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Cột bên trái -->
+    <div id="left-column">
+      <div class="top-section">
+        <div id="avatar">
+          <img id="avatarImg" alt="Avatar" width="120">
+        </div>
+      </div>
+
+      <div class="bottom-section">
+        <button id="btnQuestion">Question</button>
+        <button id="btnStart">Start</button>
+      </div>
+    </div>
+
+    <!-- Nút đổi ảnh bên phải + menu -->
+    <div id="top-right">
+      <button id="btnChange">Đổi ảnh ▾</button>
+      <div id="changeMenu" class="menu hidden">
+        <button class="menu-item" data-target="avatar">Đổi Avatar</button>
+        <button class="menu-item" data-target="bg">Đổi Background</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Input chọn file ảnh (ẩn) -->
+  <!-- <input type="file" id="fileInput" accept="image/*" style="display:none">
+
+  <script type="module" src="index.js"></script> -->
+  <!-- Input file -->
+  <input type="file" id="fileInput" accept="image/*" style="display:none">
+  <!-- KHÔNG dùng type="module" ở đây -->
+  <script src="index.js"></script>
+</body>
+</html>

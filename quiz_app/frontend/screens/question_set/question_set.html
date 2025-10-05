@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz App - Tạo câu hỏi</title>
+  <link rel="stylesheet" href="question_set.css">
+</head>
+<body>
+  <div id="question-page">
+    
+    <!-- Form nhập câu hỏi -->
+    <div id="question-form">
+      <h1>Nhập câu hỏi mới</h1>
+    
+      <!-- Câu hỏi -->
+      <div class="row">
+        <label for="qText">Câu hỏi:</label>
+        <input type="text" id="qText" placeholder="Nhập câu hỏi">
+        <input type="file" id="qImageInput" accept="image/*">
+        <div class="img-container">
+          <img id="qImagePreview" class="preview" src="">
+          <button type="button" class="btn-del" data-target="qImageInput">❌</button>
+        </div>
+      </div>
+    
+      <!-- Đáp án A -->
+      <div class="row">
+        <label for="ansA">A:</label>
+        <input type="text" id="ansA" placeholder="Nhập đáp án A">
+        <input type="file" id="imgA" accept="image/*">
+        <div class="img-container">
+          <img id="previewA" class="preview" src="">
+          <button type="button" class="btn-del" data-target="imgA">❌</button>
+        </div>
+      </div>
+    
+      <!-- Đáp án B -->
+      <div class="row">
+        <label for="ansB">B:</label>
+        <input type="text" id="ansB" placeholder="Nhập đáp án B">
+        <input type="file" id="imgB" accept="image/*">
+        <div class="img-container">
+          <img id="previewB" class="preview" src="">
+          <button type="button" class="btn-del" data-target="imgB">❌</button>
+        </div>
+      </div>
+    
+      <!-- Đáp án C -->
+      <div class="row">
+        <label for="ansC">C:</label>
+        <input type="text" id="ansC" placeholder="Nhập đáp án C">
+        <input type="file" id="imgC" accept="image/*">
+        <div class="img-container">
+          <img id="previewC" class="preview" src="">
+          <button type="button" class="btn-del" data-target="imgC">❌</button>
+        </div>
+      </div>
+    
+      <!-- Đáp án D -->
+      <div class="row">
+        <label for="ansD">D:</label>
+        <input type="text" id="ansD" placeholder="Nhập đáp án D">
+        <input type="file" id="imgD" accept="image/*">
+        <div class="img-container">
+          <img id="previewD" class="preview" src="">
+          <button type="button" class="btn-del" data-target="imgD">❌</button>
+        </div>
+      </div>
+    
+      <!-- Đáp án đúng -->
+      <div class="row">
+        <label for="correct">Đáp án đúng:</label>
+        <select id="correct">
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+          <option value="D">D</option>
+        </select>
+      </div>
+    
+      <!-- Các nút điều khiển -->
+      <div class="buttons">
+        <button id="btnSave">💾 Lưu câu hỏi</button>
+        <button id="btnDeleteDataset">🗑️ Xoá bộ đề</button>
+        <button id="btnBack">🏠 Về trang chủ</button>
+      </div>
+    </div>
+    
+        
+
+    <!-- Bảng danh sách câu hỏi -->
+    <div id="question-list">
+        <div class="list-header">
+            <h2>Câu hỏi</h2>
+            <button id="btnDeleteAll">Xoá tất cả</button>
+        </div>
+        <table>
+            <thead>
+                <tr><th>Câu hỏi</th></tr>
+            </thead>
+            <tbody id="questionTableBody">
+                <!-- Render item ở đây -->
+            </tbody>
+        </table>
+    </div>
+
+    <div id="errorModal" class="modal hidden">
+        <div class="modal-content">
+            <p id="errorMessage">Có lỗi xảy ra!</p>
+            <button id="btnCloseError">OK</button>
+        </div>
+    </div>
+
+    <div id="confirmDeleteModal" class="modal hidden">
+      <div class="modal-content">
+        <p>Bạn có chắc chắn muốn xoá toàn bộ câu hỏi?</p>
+        <div class="modal-buttons">
+          <button id="btnConfirmDeleteYes">Có</button>
+          <button id="btnConfirmDeleteNo">Không</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="confirmDeleteDatasetModal" class="modal hidden">
+      <div class="modal-content">
+        <p>Bạn có chắc chắn muốn xoá bộ đề này không?</p>
+        <div class="modal-buttons">
+          <button id="btnConfirmDeleteDatasetYes">Có</button>
+          <button id="btnConfirmDeleteDatasetNo">Không</button>
+        </div>
+      </div>
+    </div>
+
+  <script src="question_set.js"></script>
+</body>
+</html>

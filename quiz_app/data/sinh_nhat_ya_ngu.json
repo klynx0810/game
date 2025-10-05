@@ -1,0 +1,90 @@
+{
+  "displayName": "sinh nhật ya ngu",
+  "questions": [
+    {
+      "q": "ngày sinh của ya ngu ?",
+      "q_img": "",
+      "answers": {
+        "A": "0080/00.100",
+        "B": "00.800/010.00",
+        "C": "008.00/01.000",
+        "D": "008.00/010.00"
+      },
+      "img_answers": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": ""
+      },
+      "correct": "D"
+    },
+    {
+      "q": "Con mèo đầu tiên của ya tên là gì?",
+      "q_img": "",
+      "answers": {
+        "A": "giun",
+        "B": "dun",
+        "C": "yun",
+        "D": "jun"
+      },
+      "img_answers": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": ""
+      },
+      "correct": "C"
+    },
+    {
+      "q": "yaya có mấy nốt ruồi trên mặt ?",
+      "q_img": "",
+      "answers": {
+        "A": "1",
+        "B": "3",
+        "C": "2",
+        "D": "0"
+      },
+      "img_answers": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": ""
+      },
+      "correct": "B"
+    },
+    {
+      "q": "Yaya có lông nách không ?",
+      "q_img": "",
+      "answers": {
+        "A": "có 1 ít",
+        "B": "2 cm",
+        "C": "có mỗi bên trái",
+        "D": "có mỗi bên phải"
+      },
+      "img_answers": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": ""
+      },
+      "correct": "A"
+    },
+    {
+      "q": "Yaya cao bao nhiêu ?",
+      "q_img": "",
+      "answers": {
+        "A": "160 cm",
+        "B": "158 m",
+        "C": "158 cm",
+        "D": "160 m"
+      },
+      "img_answers": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": ""
+      },
+      "correct": "C"
+    }
+  ]
+}

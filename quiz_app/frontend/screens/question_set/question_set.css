@@ -1,0 +1,292 @@
+body, html {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  background: #222;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;   /* fit theo chiều cao */
+}
+
+#question-page {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 20px;
+  width: 100%;
+  max-width: 1000px;
+  height: 100%;           /* fit toàn bộ chiều cao app */
+  box-sizing: border-box;
+}
+
+/* Form nhập câu hỏi */
+#question-form {
+  background: #333;
+  padding: 20px;
+  border-radius: 8px;
+  width: 500px;          /* rộng hơn cho thoáng */
+  height: 100%;          /* fit chiều cao */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  box-sizing: border-box;
+}
+
+label {
+  display: flex;
+  flex-direction: column;   /* label + input xuống dòng */
+  align-items: flex-start;  /* căn trái */
+  gap: 5px;
+  font-weight: bold;
+}
+
+input, select {
+  width: 100%;              /* input chiếm hết chiều ngang */
+  padding: 8px;
+  border-radius: 4px;
+  border: none;
+  box-sizing: border-box;
+}
+
+
+/* Danh sách câu hỏi */
+#question-list {
+  background: #333;
+  padding: 15px;
+  border-radius: 8px;
+  flex: 1;
+  height: 100%;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+/* Header list */
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#btnDeleteAll {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background: #a33;
+  color: #fff;
+  font-size: 12px;
+}
+#btnDeleteAll:hover {
+  background: #c44;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #555;
+}
+
+td {
+  max-width: 240px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Nút xoá cho từng item */
+.delete-btn {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #a33;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 12px;
+  padding: 2px 6px;
+  cursor: pointer;
+  display: none;
+}
+
+tr.selected td .delete-btn {
+  display: inline-block;
+}
+
+#question-list h2 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #555;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #565656;
+  color: #fff;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #777;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+
+/* error */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: #333;
+  padding: 20px 30px;
+  border-radius: 8px;
+  text-align: center;
+  color: #fff;
+  min-width: 300px;
+}
+
+.modal-content button {
+  margin-top: 15px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #565656;
+  color: #fff;
+  transition: background 0.2s;
+}
+
+.modal-content button:hover {
+  background: #777;
+}
+
+.preview {
+  display: none;
+  width: 100px;
+  height: 80px;
+  object-fit: cover;
+  margin-top: 5px;
+  border-radius: 6px;
+}
+
+.image-upload {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.answers label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.row label {
+  width: 100px;
+  font-weight: bold;
+}
+
+.row input[type="text"] {
+  flex: 1;
+  padding: 6px;
+  border-radius: 4px;
+  border: none;
+}
+
+.row input[type="file"] {
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.img-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.preview {
+  width: 50px;
+  height: 50px;
+  border-radius: 6px;
+  object-fit: cover;
+  display: none;
+  border: 1px solid #555;
+}
+
+.btn-del {
+  background: #c0392b;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  margin-left: 5px;
+  cursor: pointer;
+  display: none;
+}
+
+.btn-del:hover {
+  background: #e74c3c;
+}
+
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
