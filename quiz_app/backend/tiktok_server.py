@@ -34,7 +34,7 @@ class TikTokController:
                 data = {
                     "type": "answer",
                     "data": {
-                        "username": event.user.nickname,
+                        "username": event.user.nick_name,
                         "avatar": avatar_url,
                         "answer": text
                     }
