@@ -4,8 +4,9 @@ from TikTokLive import TikTokLiveClient
 from TikTokLive.events import ConnectEvent, CommentEvent
 from websocket_manager import WebSocketManager
 
+
 class TikTokController:
-    def __init__(self, username, ws_manager):
+    def __init__(self, username, ws_manager: WebSocketManager):
         self.client = TikTokLiveClient(unique_id=username)
         self.ws_manager = ws_manager
         self._listening = False
@@ -13,7 +14,7 @@ class TikTokController:
         # Khi kết nối thành công
         @self.client.on(ConnectEvent)
         async def on_connect(event: ConnectEvent):
-            print(f"Kết nối tới @{event.unique_id} (Room ID: {self.client.room_id})")
+            print(f"✅ Kết nối tới @{event.unique_id} (Room ID: {self.client.room_id})")
 
         # Khi có comment
         @self.client.on(CommentEvent)
@@ -22,12 +23,13 @@ class TikTokController:
                 return
 
             text = event.comment.lower().strip()
-            if any(opt in text for opt in ["a", "b", "c", "d"]):
-                avatar_url = None
+            # chỉ chấp nhận các lựa chọn a/b/c/d
+            if text in ["a", "b", "c", "d"]:
+                avatar_url = ""
                 try:
                     avatar_url = event.user.avatar_thumb.m_urls[0]
                 except Exception:
-                    avatar_url = ""
+                    pass
 
                 data = {
                     "type": "answer",
@@ -39,28 +41,39 @@ class TikTokController:
                 }
                 await self.ws_manager.send_request(data=data)
 
-
     def start_listening(self):
+        print("▶️ Bắt đầu nhận comment TikTok")
         self._listening = True
 
     def stop_listening(self):
+        print("⏹ Dừng nhận comment TikTok")
         self._listening = False
 
     async def run(self):
-        """Chạy client TikTokLive không chặn luồng chính"""
+        """Chạy client TikTokLive"""
         await self.client.start()
 
 
 async def main():
-    # 1️⃣ Tạo WebSocket manager
+    # 1️⃣ Tạo WebSocket server
     ws_manager = WebSocketManager()
 
     # 2️⃣ Tạo TikTok controller
     tiktok = TikTokController(username="@your_tiktok_id", ws_manager=ws_manager)
 
-    # 3️⃣ Chạy song song WS server + TikTok listener
+    # 3️⃣ Gắn callback xử lý message từ frontend
+    async def handle_ws_message(data):
+        msg_type = data.get("type")
+        if msg_type == "start_listen":
+            tiktok.start_listening()
+        elif msg_type == "stop_listen":
+            tiktok.stop_listening()
+
+    ws_manager.on_message(handle_ws_message)
+
+    # 4️⃣ Chạy song song TikTok + WebSocket
     await asyncio.gather(
-        ws_manager.start_server(tiktok),
+        ws_manager.start_server(),
         tiktok.run()
     )
 
