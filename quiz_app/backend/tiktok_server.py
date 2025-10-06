@@ -59,7 +59,7 @@ async def main():
     ws_manager = WebSocketManager()
 
     # 2️⃣ Tạo TikTok controller
-    tiktok = TikTokController(username="@your_tiktok_id", ws_manager=ws_manager)
+    tiktok = TikTokController(username="yaya_8108", ws_manager=ws_manager)
 
     # 3️⃣ Gắn callback xử lý message từ frontend
     async def handle_ws_message(data):
