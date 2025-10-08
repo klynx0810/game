@@ -10,52 +10,51 @@ class TikTokController:
         self.client = TikTokLiveClient(unique_id=username)
         self.ws_manager = ws_manager
         self._listening = False
-        self.answered_users = set()  # 🟢 lưu user_id đã trả lời
+        self.list_id = []
 
+        # Khi kết nối thành công
         @self.client.on(ConnectEvent)
         async def on_connect(event: ConnectEvent):
             print(f"✅ Kết nối tới @{event.unique_id} (Room ID: {self.client.room_id})")
 
+        # Khi có comment
         @self.client.on(CommentEvent)
         async def on_comment(event: CommentEvent):
             if not self._listening:
                 return
 
             text = event.comment.lower().strip()
+            # chỉ chấp nhận các lựa chọn a/b/c/d
             if text in ["a", "b", "c", "d"]:
-                user_id = event.user.user_id
-
-                # 🟠 Nếu user đã chọn rồi thì bỏ qua
-                if user_id in self.answered_users:
-                    return
-
-                # 🟢 Lưu lại user này
-                self.answered_users.add(user_id)
-
                 avatar_url = ""
                 try:
                     avatar_url = event.user.avatar_thumb.m_urls[0]
                 except Exception:
                     pass
-
+                user_name = event.user.nick_name
+                user_id = event.user.id
                 data = {
                     "type": "answer",
                     "data": {
-                        "username": event.user.nick_name,
+                        "username": user_name,
                         "avatar": avatar_url,
                         "answer": text
                     }
                 }
-                await self.ws_manager.send_request(data=data)
+                if user_id not in self.list_id:
+                    await self.ws_manager.send_request(data=data)
+                    self.list_id.append(user_id)
+
 
     def start_listening(self):
         print("▶️ Bắt đầu nhận comment TikTok")
         self._listening = True
-        self.answered_users.clear()  # 🔄 reset lại danh sách người chơi mới
+        # self.list_id.clear()
 
     def stop_listening(self):
         print("⏹ Dừng nhận comment TikTok")
         self._listening = False
+        self.list_id.clear()
 
     async def run(self):
         """Chạy client TikTokLive"""

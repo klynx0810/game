@@ -43,7 +43,29 @@ dataset.questions.forEach((q, i) => {
   list.appendChild(div);
 });
 
+let mode = "sequential"; // mặc định tuần tự
+
+const btnShuffle = document.getElementById("btnShuffle");
+const btnSequential = document.getElementById("btnSequential");
+
+btnShuffle.addEventListener("click", () => {
+  mode = "shuffle";
+  btnShuffle.classList.add("active");
+  btnSequential.classList.remove("active");
+});
+
+btnSequential.addEventListener("click", () => {
+  mode = "sequential";
+  btnSequential.classList.add("active");
+  btnShuffle.classList.remove("active");
+});
+
 // nút bắt đầu
 document.getElementById("btnStartQuiz").addEventListener("click", () => {
-  window.location.href = `../quiz/quiz.html?file=${datasetFile}`;
+  window.location.href = `../quiz/quiz.html?file=${datasetFile}&mode=${mode}`;
 });
+
+// nút bắt đầu cũ
+// document.getElementById("btnStartQuiz").addEventListener("click", () => {
+//   window.location.href = `../quiz/quiz.html?file=${datasetFile}`;
+// });

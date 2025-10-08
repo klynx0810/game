@@ -49,3 +49,18 @@ button {
 button:hover {
   background: #777;
 }
+
+.mode-btn {
+  background-color: #444;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  margin: 5px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.mode-btn.active {
+  background-color: #2ecc71; /* xanh lá khi được chọn */
+}

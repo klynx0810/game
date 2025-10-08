@@ -106,6 +106,18 @@ if (currentFile && fs.existsSync(currentFile)) {
   dataset = JSON.parse(fs.readFileSync(currentFile, "utf8"));
 }
 
+// ====== Đọc chế độ từ URL ======
+const mode = urlParams.get("mode") || "sequential";
+
+// Nếu là chế độ trộn thì random lại thứ tự câu hỏi
+if (mode === "shuffle" && dataset.questions && dataset.questions.length > 0) {
+  dataset.questions = dataset.questions
+    .map((q) => ({ q, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(({ q }) => q);
+  console.log("🔀 Đã trộn thứ tự câu hỏi!");
+}
+
 // ===== Load avatar chủ phòng =====
 let hostData = { username: "Chủ phòng", avatar: "../../assets/default_avatar.png" };
 const userDataPath = path.join(__dirname, "..", "..", "user_data.json");

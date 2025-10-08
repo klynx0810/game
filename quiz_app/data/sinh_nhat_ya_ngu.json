@@ -85,6 +85,261 @@
         "D": ""
       },
       "correct": "C"
+    },
+    {
+      "q": "hiện tại Ya bao nhiêu kg",
+      "q_img": "",
+      "answers": {
+        "A": "46,5",
+        "B": "47,5",
+        "C": "48,5",
+        "D": "49,5"
+      },
+      "img_answers": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": ""
+      },
+      "correct": "B"
+    },
+    {
+      "q": "ya thích uống gì nhất",
+      "q_img": "",
+      "answers": {
+        "A": "matcha latte",
+        "B": "nước dừa",
+        "C": "dưa hấu",
+        "D": "nước cam"
+      },
+      "img_answers": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": ""
+      },
+      "correct": "B"
+    },
+    {
+      "q": "ya debut tháng mấy",
+      "q_img": "",
+      "answers": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4"
+      },
+      "img_answers": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": ""
+      },
+      "correct": "C"
+    },
+    {
+      "q": "ya sinh năm bao nhiêu",
+      "q_img": "",
+      "answers": {
+        "A": "2k9",
+        "B": "99",
+        "C": "89",
+        "D": "79"
+      },
+      "img_answers": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": ""
+      },
+      "correct": "D"
+    },
+    {
+      "q": "ya thích màu gì",
+      "q_img": "",
+      "answers": {
+        "A": "đen",
+        "B": "trắng",
+        "C": "đỏ",
+        "D": "vàng"
+      },
+      "img_answers": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": ""
+      },
+      "correct": "A"
+    },
+    {
+      "q": "linh vật nhà ya là",
+      "q_img": "",
+      "answers": {
+        "A": "ngan",
+        "B": "ngỗng",
+        "C": "vịt",
+        "D": "thiên nga"
+      },
+      "img_answers": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": ""
+      },
+      "correct": "C"
+    },
+    {
+      "q": "567x987=",
+      "q_img": "",
+      "answers": {
+        "A": "559628",
+        "B": "559729",
+        "C": "559629",
+        "D": "559728"
+      },
+      "img_answers": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": ""
+      },
+      "correct": "C"
+    },
+    {
+      "q": "quỳ tím nhúng axit sẽ thành màu gì",
+      "q_img": "",
+      "answers": {
+        "A": "trắng",
+        "B": "đỏ",
+        "C": "xanh",
+        "D": "khong đổi"
+      },
+      "img_answers": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": ""
+      },
+      "correct": "B"
+    },
+    {
+      "q": "đơn vị của hiệu điện thế là",
+      "q_img": "",
+      "answers": {
+        "A": "W",
+        "B": "V",
+        "C": "A",
+        "D": "M"
+      },
+      "img_answers": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": ""
+      },
+      "correct": "B"
+    },
+    {
+      "q": "What color is the sky on a clear day",
+      "q_img": "",
+      "answers": {
+        "A": "green",
+        "B": "blue",
+        "C": "red",
+        "D": "yellow"
+      },
+      "img_answers": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": ""
+      },
+      "correct": "B"
+    },
+    {
+      "q": "ai là vua đầu tiên nhà Nguyễn",
+      "q_img": "",
+      "answers": {
+        "A": "GIA LONG",
+        "B": "MINH MẠNG",
+        "C": "TỰ ĐỨC",
+        "D": "THÀNH THÁI"
+      },
+      "img_answers": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": ""
+      },
+      "correct": "A"
+    },
+    {
+      "q": "ya quê ở đâu",
+      "q_img": "",
+      "answers": {
+        "A": "quảng nam",
+        "B": "hải phòng",
+        "C": "bắc giang",
+        "D": "quảng ninh"
+      },
+      "img_answers": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": ""
+      },
+      "correct": "D"
+    },
+    {
+      "q": "ya thích ăn thịt nào nhất",
+      "q_img": "",
+      "answers": {
+        "A": "heo",
+        "B": "bò",
+        "C": "gà",
+        "D": "vịt"
+      },
+      "img_answers": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": ""
+      },
+      "correct": "B"
+    },
+    {
+      "q": "tác giả truyện Lão Hạc là ai",
+      "q_img": "",
+      "answers": {
+        "A": "NAM CAO",
+        "B": "NGÔ TẤT TỐ",
+        "C": "TÔ HOÀI",
+        "D": "KIM LÂN"
+      },
+      "img_answers": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": ""
+      },
+      "correct": "A"
+    },
+    {
+      "q": "bộ phận nào của cây hấp thụ nước",
+      "q_img": "",
+      "answers": {
+        "A": "lá",
+        "B": "hoa",
+        "C": "rễ",
+        "D": "thân"
+      },
+      "img_answers": {
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": ""
+      },
+      "correct": "C"
     }
   ]
 }
