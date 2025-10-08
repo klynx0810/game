@@ -3,7 +3,7 @@ import json
 from TikTokLive import TikTokLiveClient
 from TikTokLive.events import ConnectEvent, CommentEvent
 from websocket_manager import WebSocketManager
-
+import time
 
 class TikTokController:
     def __init__(self, username, ws_manager: WebSocketManager):
@@ -11,6 +11,8 @@ class TikTokController:
         self.ws_manager = ws_manager
         self._listening = False
         self.list_id = []
+        self.listen_start_time = 0
+        self.listen_duration = 20
 
         # Khi kết nối thành công
         @self.client.on(ConnectEvent)
@@ -21,6 +23,11 @@ class TikTokController:
         @self.client.on(CommentEvent)
         async def on_comment(event: CommentEvent):
             if not self._listening:
+                return
+            
+            # Bỏ qua comment quá muộn (quá 25s sau start_listen)
+            if time.time() - self.listen_start_time > self.listen_duration:
+                # print("⏩ Comment đến trễ, bỏ qua")
                 return
 
             text = event.comment.lower().strip()
@@ -50,6 +57,7 @@ class TikTokController:
         print("▶️ Bắt đầu nhận comment TikTok")
         self._listening = True
         # self.list_id.clear()
+        self.listen_start_time = time.time()
 
     def stop_listening(self):
         print("⏹ Dừng nhận comment TikTok")
@@ -66,7 +74,7 @@ async def main():
     ws_manager = WebSocketManager()
 
     # 2️⃣ Tạo TikTok controller
-    tiktok = TikTokController(username="yaya_8108", ws_manager=ws_manager)
+    tiktok = TikTokController(username="yaya_8101", ws_manager=ws_manager)
 
     # 3️⃣ Gắn callback xử lý message từ frontend
     async def handle_ws_message(data):

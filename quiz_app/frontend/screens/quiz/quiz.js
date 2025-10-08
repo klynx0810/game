@@ -152,14 +152,103 @@ function loadQuestion() {
   clearInterval(interval);
   stopListening();
 
+  // if (currentIndex >= dataset.questions.length) {
+  //   questionText.innerText = "🎉 Hết câu hỏi!";
+  //   document.getElementById("answers").style.display = "none";
+  //   document.getElementById("btnNext").style.display = "none";
+  //   document.getElementById("btnPrev").style.display = "none";
+  //   document.getElementById("timer-box").style.display = "none";
+  //   return;
+  // }
   if (currentIndex >= dataset.questions.length) {
-    questionText.innerText = "🎉 Hết câu hỏi!";
+    // Ẩn các phần quiz
     document.getElementById("answers").style.display = "none";
     document.getElementById("btnNext").style.display = "none";
     document.getElementById("btnPrev").style.display = "none";
     document.getElementById("timer-box").style.display = "none";
+    questionText.innerText = "🎉 Hết câu hỏi! Dưới đây là tổng kết:";
+  
+    // Xóa tổng kết cũ nếu có
+    const oldSummary = document.getElementById("summary");
+    if (oldSummary) oldSummary.remove();
+  
+    // ======= TẠO KHUNG HIỂN THỊ TỔNG KẾT =======
+    const summaryDiv = document.createElement("div");
+    summaryDiv.id = "summary";
+    summaryDiv.style.position = "fixed";
+    summaryDiv.style.top = "50%";
+    summaryDiv.style.left = "50%";
+    summaryDiv.style.transform = "translate(-50%, -50%)";
+    summaryDiv.style.width = "70%";
+    summaryDiv.style.height = "70%";
+    summaryDiv.style.overflowY = "auto";
+    summaryDiv.style.background = "rgba(0, 0, 0, 0.8)";
+    summaryDiv.style.border = "2px solid rgba(255,255,255,0.2)";
+    summaryDiv.style.borderRadius = "12px";
+    summaryDiv.style.padding = "24px";
+    summaryDiv.style.zIndex = "99999";
+    summaryDiv.style.color = "#fff";
+    summaryDiv.style.fontSize = "18px";
+    summaryDiv.style.boxShadow = "0 0 25px rgba(0,0,0,0.6)";
+    summaryDiv.innerHTML = "<h2 style='text-align:center;'>📋 Tổng kết kết quả</h2>";
+  
+    dataset.questions.forEach((q, idx) => {
+      const result = answerHistory[idx];
+      const correct = result ? result.correct : "?";
+      const correctText = result && q.answers[correct] ? q.answers[correct] : "Chưa có";
+  
+      const item = document.createElement("div");
+      item.style.marginBottom = "20px";
+      item.style.borderBottom = "1px solid rgba(255,255,255,0.2)";
+      item.style.paddingBottom = "10px";
+  
+      // Danh sách người đúng
+      let playersHTML = "";
+      if (result && result.players && result.players.length > 0) {
+        playersHTML = result.players
+          .map(
+            (p) => `
+              <div style="display:inline-block;text-align:center;margin-right:8px;">
+                <img src="${p.avatar}" title="${p.username}" style="width:45px;height:45px;border-radius:50%;object-fit:cover;">
+                <div style="font-size:12px;margin-top:4px;">${p.username}</div>
+              </div>
+            `
+          )
+          .join("");
+      } else {
+        playersHTML = "<i style='color:#ccc'>Không ai chọn đúng</i>";
+      }
+  
+      item.innerHTML = `
+        <p><b>Câu ${idx + 1}:</b> ${q.q}</p>
+        <p>✅ <b>Đáp án đúng:</b> ${correct} - ${correctText}</p>
+        <div style="margin-top:6px;">${playersHTML}</div>
+      `;
+  
+      summaryDiv.appendChild(item);
+    });
+  
+    // ======= Nút quay lại =======
+    const btn = document.createElement("button");
+    btn.innerText = "🏠 Về trang chủ";
+    btn.style.display = "block";
+    btn.style.margin = "20px auto 0";
+    btn.style.padding = "10px 20px";
+    btn.style.fontSize = "16px";
+    btn.style.border = "none";
+    btn.style.borderRadius = "8px";
+    btn.style.background = "#ff8c00";
+    btn.style.color = "#fff";
+    btn.style.cursor = "pointer";
+    btn.onclick = () => (window.location.href = "../../index.html");
+    summaryDiv.appendChild(btn);
+  
+    // ======= Hiển thị trên body =======
+    document.body.appendChild(summaryDiv);
+  
+    console.log("✅ Hiện tổng kết!");
     return;
-  }
+  }  
 
   const q = dataset.questions[currentIndex];
   questionText.innerText = q.q || "";
@@ -243,7 +332,7 @@ function resetTimer(correctAnswer) {
     return;
   }
 
-  let time = 10;
+  let time = 20;
   timerBox.innerText = String(time);
 
   const stateCode = window.globalWS ? window.globalWS.readyState : -1;
@@ -355,10 +444,10 @@ function resetAnswersStyle() {
 
 // ====== Nút "Câu tiếp theo" ======
 document.getElementById("btnNext").addEventListener("click", () => {
-  if (currentIndex < dataset.questions.length - 1) {
+  // if (currentIndex < dataset.questions.length - 1) {
     currentIndex++;
     loadQuestion(); // loadQuestion tự clear interval & stopListening
-  }
+  // }
 });
 
 // ====== Nút "Câu trước" ======

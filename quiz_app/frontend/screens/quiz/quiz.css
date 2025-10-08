@@ -47,12 +47,21 @@ html, body {
   line-height: 1.4;
 }
 
-.question-img {
+/* .question-img {
   max-height: 25vh;
   width: auto;
   height: auto;
   object-fit: contain;
+} */
+.question-img{
+  display: block;
+  margin: 0 auto;       /* đưa ảnh vào giữa theo trục ngang */
+  max-height: 25vh;
+  height: auto;
+  width: auto;
+  object-fit: contain;
 }
+
 
 /* ===== Timer ===== */
 #timer-box {
